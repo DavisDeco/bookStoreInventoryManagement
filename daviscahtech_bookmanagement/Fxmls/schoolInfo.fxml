@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="415.0" style="-fx-background-color: wheat;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_bookmanagement.Controllers.SchoolInfoController">
+    <stylesheets>
+        <URL value="@/daviscahtech_bookmanagement/bookManagement.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="330.0" prefWidth="580.0" style="-fx-background-color: lightgrey; -fx-background-radius: 13; -fx-border-radius: 13;" stylesheets="@../bookManagement.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school name">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolName" promptText="e.g Daviscah Tech High School" styleClass="fields">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school address">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolAddress" promptText="e.g P.O BOX 1234 - 00500" styleClass="fields">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school region">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolRegion" promptText="e.g Nairobi - Kenya" styleClass="fields">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter one school contact">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolContact" promptText="e.g 0712345678 or 020 1234 567" styleClass="fields">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school email">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolEmail" promptText="e.g info@daviscahtech.com or daviscahtech@gmail.com" styleClass="fields">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school website">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="schoolWebsite" promptText="e.g daviscahtech.com" styleClass="fields">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fx:id="displaySchoolID" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Button mnemonicParsing="false" onAction="#loadInitialValueOperation" styleClass="buttons2" text="Load Details to view">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <HBox alignment="CENTER" prefWidth="200.0" stylesheets="@../bookManagement.css">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#registerSchoolInfoOperation" styleClass="buttons1" text="Register Info">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateSchoolChanges" styleClass="buttons1" text="update changes" />
+                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearSchoolFields" styleClass="buttons1" text="Clear fields">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

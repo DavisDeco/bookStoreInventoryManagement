@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="558.0" style="-fx-background-color: wheat;" stylesheets="@../bookManagement.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_bookmanagement.Controllers.SchoolSubjectController">
+   <children>
+      <ListView fx:id="subjectNameListView" layoutX="380.0" layoutY="13.0" onMouseClicked="#subjectNameListViewMouseClicked" prefHeight="275.0" prefWidth="169.0" />
+      <Separator layoutX="14.0" layoutY="120.0" prefHeight="4.0" prefWidth="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="178.0" />
+      <GridPane layoutX="14.0" layoutY="127.0" prefHeight="27.0" prefWidth="327.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="122.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="205.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter school subject" />
+            <TextField fx:id="subjectName" alignment="CENTER" promptText="e.g English, Maths, Biology" styleClass="fields" stylesheets="@../bookManagement.css" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="6.0" layoutY="189.0" prefHeight="100.0" prefWidth="370.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#subject_register" styleClass="buttons1" text="Register subject">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="169.0" layoutY="48.0" mnemonicParsing="false" onAction="#subject_update" styleClass="buttons1" text="Update subject">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="195.0" layoutY="48.0" mnemonicParsing="false" onAction="#subject_delete" styleClass="buttons1" text="Delete subject">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Text fx:id="searchSubjectID" fill="RED" layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField fx:id="searchSubjectName" alignment="CENTER" layoutX="14.0" layoutY="28.0" onAction="#searchSubjectNameOperation" prefHeight="27.0" prefWidth="205.0" promptText="Enter subject name to search" styleClass="fields" stylesheets="@../bookManagement.css" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="246.0" prefWidth="330.0" style="-fx-background-color: wheat;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="daviscahtech_bookmanagement.Controllers.DeleteStudentsController">
+    <stylesheets>
+        <URL value="@/daviscahtech_bookmanagement/bookManagement.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="58.0" layoutY="24.0" prefHeight="346.0" prefWidth="378.0" stylesheets="@../bookManagement.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Delete all registered students from a specific class">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="allClassesComboBox" prefHeight="25.0" promptText="Choose target class to delete">
+                     <effect>
+                        <InnerShadow choke="0.71" color="#0ec940" height="26.94" radius="13.71" width="29.9" />
+                     </effect>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#refreshAllClassesOperation">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/syn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#deleteStudentsOperation" prefHeight="29.0" prefWidth="247.0" styleClass="buttons1" text="Delete students" />
+               </children>
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

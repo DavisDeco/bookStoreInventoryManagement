@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1280.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_bookmanagement.Controllers.MainPageController">
+    <stylesheets>
+        <URL value="@/daviscahtech_bookmanagement/bookManagement.css" />
+    </stylesheets>
+   <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" style="-fx-background-color: floralwhite; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openTeachingStaffWindow" text="Teaching Staff">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openBackUpWindow" text="Back-up">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/kfm.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#closeProgrammeOperation" text="Log out">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/red_exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Reports">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#openReportPrntingOperation" text="Generate &amp; Print">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/excel2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openQuickReportWindow" text="Quick report">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/documents.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Import Data">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#importListsOfStudentsFromExcel" text="Import List of students">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/student.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#importSchoolBooksFromExcel" text="Import school books">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/books.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#importIssuedBooksFromExcel" text="Import issued books">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/excel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Window">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openClassSettingOperation" text="Add school classes/Levels">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/minutes.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openSubjectSettingOperation" text="Add school subject">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/q.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openSchoolInfoOperation" text="School information">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/info.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#openPromoteStudentOperation" text="Promote Students">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/student.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Authentication setting">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openLogginSettingOperation" text="Access Master Admin">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/admin.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                      <MenuItem mnemonicParsing="false" onAction="#openPersonalLoginDetailOperation" text="Change Login details">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/key.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#openLocalServerSettingOperation" text="Local server setting">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/secure.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About us">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#adoutUsOperation" text="About us">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/dtLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+         <effect>
+            <DropShadow color="#09ed22" height="29.89" radius="12.2225" />
+         </effect>
+      </MenuBar>
+      <TabPane layoutX="14.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" stylesheets="@../bookManagement.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+        <tabs>
+          <Tab text="Configure Students">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="14.0" layoutY="14.0" prefHeight="571.0" prefWidth="1280.0" style="-fx-background-color: floralwhite;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="569.0" prefWidth="366.0">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register/Update/Search and delete students " AnchorPane.topAnchor="14.0" />
+                                    <TextField fx:id="studentSearchID" alignment="CENTER" focusTraversable="false" layoutX="106.0" layoutY="37.0" onAction="#studentSearch" prefHeight="25.0" prefWidth="162.0" promptText="Enter Student ID to search" styleClass="fields" stylesheets="@../bookManagement.css" />
+                                    <Separator layoutX="14.0" layoutY="70.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <GridPane layoutX="14.0" layoutY="77.0" prefHeight="184.0" prefWidth="346.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="141.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="205.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student name" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student class/Form/Level" GridPane.rowIndex="2" />
+                                          <TextField fx:id="studentID" styleClass="fields" stylesheets="@../bookManagement.css" GridPane.columnIndex="1">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <TextField fx:id="studentName" styleClass="fields" stylesheets="@../bookManagement.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <ComboBox fx:id="studentChooseClass" opacity="0.85" prefHeight="27.0" prefWidth="161.0" promptText="Choose " stylesheets="@../bookManagement.css">
+                                                   <effect>
+                                                      <InnerShadow choke="0.67" color="#0ec940" height="23.97" radius="13.7075" width="32.86" />
+                                                   </effect>
+                                                </ComboBox>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#refresh_classCombo" prefHeight="20.0" prefWidth="20.0">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/syn.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Parent's Email" GridPane.rowIndex="3" />
+                                          <TextField fx:id="studentParentEmail" promptText="Leave empty if no parent email" styleClass="fields" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Button layoutX="43.0" layoutY="262.0" mnemonicParsing="false" onAction="#student_register" styleClass="buttons2" text="Register" />
+                                    <Button layoutX="137.0" layoutY="262.0" mnemonicParsing="false" onAction="#student_update" styleClass="buttons2" text="Update" />
+                                    <Button layoutX="226.0" layoutY="262.0" mnemonicParsing="false" onAction="#student_delete" styleClass="buttons2" text="Delete" />
+                                    <Button layoutX="311.0" layoutY="262.0" mnemonicParsing="false" onAction="#student_clear" styleClass="buttons2" text="Clear" />
+                                    <Separator layoutY="298.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <TabPane layoutX="14.0" layoutY="300.0" prefHeight="288.0" prefWidth="349.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="301.0">
+                                      <tabs>
+                                        <Tab text="Promote this student">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                                                   <children>
+                                                      <VBox layoutX="35.0" layoutY="14.0" prefHeight="259.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text fx:id="promote_studentClass" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose class/Level to promote this student to:">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <ComboBox fx:id="promoteSingleStudentCombobox" prefWidth="150.0" promptText="Choose Target Class">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin>
+                                                                     <effect>
+                                                                        <InnerShadow choke="0.67" color="#0ec940" height="26.93" radius="12.965" width="26.93" />
+                                                                     </effect>
+                                                                  </ComboBox>
+                                                                  <Button mnemonicParsing="false" onAction="#refresh_promoteSingleStudentCombobox">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../Resources/syn.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" onAction="#promoteSingleStudentOperation" prefHeight="29.0" prefWidth="353.0" styleClass="buttons2" text="Promote Student" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="100.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="De-promote this student">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: wheat;">
+                                                   <children>
+                                                      <VBox layoutX="24.0" layoutY="14.0" prefHeight="259.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose class/Level to de-promote this students to:" />
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="20.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <ComboBox fx:id="depromoteStudentCombobox" prefWidth="150.0" promptText="Choose target class">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                     <effect>
+                                                                        <InnerShadow choke="0.67" color="#0ec940" radius="12.225" width="29.9" />
+                                                                     </effect>
+                                                                  </ComboBox>
+                                                                  <Button mnemonicParsing="false" onAction="#refresh_depromoteStudentCombobox">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../Resources/syn.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefWidth="200.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="110.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" onAction="#depromoteSingleStudentOperation" prefHeight="29.0" prefWidth="350.0" styleClass="buttons2" text="De-promote student" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Finalist">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: pink;">
+                                                   <children>
+                                                      <VBox layoutX="14.0" layoutY="14.0" prefHeight="259.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remove/Delete final students from a class:" />
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <children>
+                                                                  <ComboBox fx:id="finalStudentComboClass" prefWidth="150.0" promptText="Choose final class">
+                                                                     <effect>
+                                                                        <InnerShadow choke="0.69" color="#0ec940" radius="13.7075" width="35.83" />
+                                                                     </effect>
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </ComboBox>
+                                                                  <Button mnemonicParsing="false" onAction="#refresh_finalStudentComboClass">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../Resources/syn.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="20.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" onAction="#deleteSpecificStudentInClass" prefHeight="25.0" prefWidth="344.0" styleClass="buttons2" text="Delete students from this class" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="110.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefWidth="200.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children></AnchorPane>
+                                             </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="student_table" layoutY="40.0" onKeyReleased="#studentTableKeyRealease" onMouseClicked="#studentTableMouseClick" prefHeight="569.0" prefWidth="894.0" style="-fx-background-color: floralwhite;" styleClass="pupilBackground" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <columns>
+                                        <TableColumn fx:id="column_studentID" prefWidth="118.0" text="Student ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                        <TableColumn fx:id="column_studentNmae" prefWidth="234.0" text="Student name">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/student.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="column_studentClass" prefWidth="112.0" text="Student class">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/School.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="column_studentRegistrationDate" prefWidth="213.0" text="Registered Date">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/calender.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="column_studentEnrolled" prefWidth="78.0" text="Enrolled">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/mark.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Student detail table" textFill="#03ae42">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="searchAnyOnStudentTable" alignment="CENTER" layoutX="372.0" layoutY="10.0" onMouseClicked="#filterStudentTableSearch" prefHeight="25.0" prefWidth="265.0" promptText="Enter Student name or class to search" styleClass="fields" />
+                                    <Hyperlink layoutX="171.0" layoutY="12.0" onAction="#rebootStudentTable" text="Refresh table" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Configure Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="14.0" layoutY="7.0" prefHeight="601.0" prefWidth="1260.0" style="-fx-background-color: floralwhite;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox layoutY="14.0" prefHeight="410.0" prefWidth="369.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Register/update/search and delete all books in the school" />
+                                          <TextField fx:id="bookSearchID" alignment="CENTER" onAction="#book_searchOperation" prefHeight="25.0" prefWidth="218.0" promptText="Enter book ID to search" styleClass="bluefields">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <GridPane prefHeight="378.0" prefWidth="328.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="120.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="198.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book class/level" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Category/Subject" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book Author" GridPane.rowIndex="3" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book title" GridPane.rowIndex="4" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book publisher" GridPane.rowIndex="5" />
+                                                <TextField fx:id="bookID" styleClass="bluefields" GridPane.columnIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="3.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="bookClass" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="3.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="bookAuthor" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="3.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="BookTitle" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="3.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="bookPublisher" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="3.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <ComboBox fx:id="bookSubject" prefHeight="25.0" prefWidth="150.0" promptText="Choose">
+                                                         <effect>
+                                                            <InnerShadow choke="0.63" color="BLUE" height="19.52" radius="12.594999999999999" width="32.86" />
+                                                         </effect>
+                                                      </ComboBox>
+                                                      <Button mnemonicParsing="false" onAction="#refresh_SubjectCombo">
+                                                         <graphic>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Resources/syn.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <Text fx:id="book_registeredDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrered date" visible="false" GridPane.rowIndex="6" />
+                                                <Text fx:id="book_registeredDate" fill="#ff0505" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Button contentDisplay="TOP" layoutX="13.0" layoutY="424.0" mnemonicParsing="false" onAction="#bookRegister" styleClass="buttons2" text="Register">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/book.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="TOP" layoutX="106.0" layoutY="424.0" mnemonicParsing="false" onAction="#bookUpdate" styleClass="buttons2" text="Update">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/book_update.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="TOP" layoutX="199.0" layoutY="424.0" mnemonicParsing="false" onAction="#bookDelete" styleClass="buttons2" text="Delete">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/book_delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="TOP" layoutX="292.0" layoutY="424.0" mnemonicParsing="false" onAction="#bookClearFields" styleClass="buttons2" text="Clear">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/clear.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="book_table" layoutX="14.0" layoutY="14.0" onKeyReleased="#bookTableKeyReleased" onMouseClicked="#bookTableMouseClicked" prefHeight="599.0" prefWidth="880.0" styleClass="booksBackground" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <columns>
+                                        <TableColumn fx:id="book_columnID" prefWidth="75.0" text="Book ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                        <TableColumn fx:id="book_columnClass" prefWidth="77.0" text="Book Class" />
+                                          <TableColumn fx:id="book_columnSubject" prefWidth="122.0" text="Book subject">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="book_columnAuthor" prefWidth="131.0" text="Book author">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/author.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="book_columnTitle" prefWidth="114.0" text="Book title">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="book_columnPublisher" prefWidth="135.0" text="Book publisher">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="book_columnEnteredDate" prefWidth="131.0" text="Entered date">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/calender.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="book_columnAvailable" prefWidth="94.0" text="Available">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/mark.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Book detail table" textFill="#03ae42">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="searchAnyOnBookTable" alignment="CENTER" layoutX="343.0" layoutY="11.0" onMouseClicked="#filterBookTableSearch" prefHeight="27.0" prefWidth="348.0" promptText="Enter book title, ID, publisher or subject to search to search" styleClass="bluefields" />
+                                    <Hyperlink layoutX="163.0" layoutY="12.0" onAction="#rebootBookTable" text="Refresh table" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Configure Issued Books/Receive Books">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.30127186009538953" layoutX="14.0" layoutY="14.0" prefHeight="601.0" prefWidth="1260.0" style="-fx-background-color: floralwhite;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register/search/update and delete issued book" />
+                                    <TextField fx:id="issuebook_searchStudentID" alignment="CENTER" layoutX="6.0" layoutY="41.0" onAction="#issuebook_searchStudentOperation" prefHeight="27.0" prefWidth="159.0" promptText="Enter student ID to search" styleClass="fields" />
+                                    <VBox alignment="CENTER" layoutX="170.0" layoutY="26.0" prefHeight="74.0" prefWidth="196.0" style="-fx-border-color: brown; -fx-border-radius: 15; -fx-background-radius: 15;">
+                                       <children>
+                                          <Text fx:id="issueBook_studentID" fill="#038a25" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="182.13671875">
+                                             <VBox.margin>
+                                                <Insets left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="issueBook_studentName" fill="#038a25" layoutX="16.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="182.13671875">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="issueBook_studentClass" fill="#038a25" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="188.13671875">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Text>
+                                       </children>
+                                    </VBox>
+                                    <Separator layoutY="104.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <TextField fx:id="issuebook_searchBookID" alignment="CENTER" layoutX="2.0" layoutY="153.0" onAction="#issuebook_searchBookOperation" prefHeight="27.0" prefWidth="161.0" promptText="Enter book ID to search" styleClass="bluefields" />
+                                    <VBox layoutX="168.0" layoutY="118.0" prefHeight="90.0" prefWidth="200.0" style="-fx-border-radius: 15; -fx-border-color: brown;">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="issuebook_bookID" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.13671875">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="issuebook_bookTtle" fill="BLUE" layoutX="16.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.13671875">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="issuebook_bookClass" fill="BLUE" layoutX="16.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.13671875">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="issuebook_bookSubject" fill="BLUE" layoutX="16.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.13671875">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <Separator layoutY="219.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <GridPane layoutX="14.0" layoutY="213.0" prefHeight="119.0" prefWidth="351.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="150.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="179.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher issuing book" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other  issued book details" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Book condition/status" GridPane.rowIndex="2" />
+                                          <TextField fx:id="issuebook_teacherIssuing" styleClass="fields" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <ComboBox fx:id="issuebook_bookStatus" prefHeight="25.0" prefWidth="178.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <effect>
+                                                <InnerShadow choke="0.69" color="#0ec940" height="31.38" radius="11.8525" width="18.03" />
+                                             </effect>
+                                          </ComboBox>
+                                       </children>
+                                    </GridPane>
+                                    <Button layoutX="153.0" layoutY="359.0" mnemonicParsing="false" onAction="#isssuebook_register" styleClass="buttons2" text="Issue book" />
+                                    <Button layoutX="260.0" layoutY="359.0" mnemonicParsing="false" onAction="#isssuebook_clearFields" prefHeight="29.0" prefWidth="90.0" styleClass="buttons2" text="Clear" />
+                                    <Separator layoutX="88.0" layoutY="397.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <Text layoutX="15.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receive this book if succesfully returned " />
+                                    <Button layoutX="262.0" layoutY="414.0" mnemonicParsing="false" onAction="#issuebook_returnBookOperation" styleClass="buttons2" text="Return book" />
+                                    <Separator layoutX="51.0" layoutY="466.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <Text layoutX="15.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register book as lost by this student" />
+                                    <Button layoutX="261.0" layoutY="481.0" mnemonicParsing="false" onAction="#isssuebook_LostBookOperation" prefHeight="29.0" prefWidth="85.0" styleClass="buttons2" text="Lost book" />
+                                    <Separator layoutX="90.0" layoutY="526.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <Text layoutX="15.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete specific record of issued book" />
+                                    <Button layoutX="260.0" layoutY="535.0" mnemonicParsing="false" onAction="#issuedBook_deteteSpecificRecord" styleClass="buttons2" text="Delete record" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="issuedBook_table" layoutX="6.0" layoutY="32.0" onKeyReleased="#issuedBook_tableKeyReleased" onMouseClicked="#issuedBook_tableMouseClicked" prefHeight="599.0" prefWidth="876.0" styleClass="booksBackground" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <columns>
+                                        <TableColumn fx:id="issuedBook_columnBookID" prefWidth="75.0" text="Book ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                        <TableColumn fx:id="issuedBook_columnBookClass" prefWidth="75.0" text="Book Class" />
+                                          <TableColumn fx:id="issuedBook_columnBookSubject" prefWidth="134.0" text="Book Subject">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="issuedBook_columnBookTitle" prefWidth="118.0" text="Book Title">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="issuedBook_columnStudentID" prefWidth="97.0" text="Student ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="issuedBook_columnStudentName" prefWidth="138.0" text="Student name">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/student.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="issuedBook_columnIssuedBy" prefWidth="109.0" text="Issued by">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/user.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="issuedBook_columnDateIssued" prefWidth="129.0" text="Date issued">
+                                             <graphic>
+                                                <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/calender.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                      </columns>
+                                    </TableView>
+                                    <Text fill="#03ae42" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issued book table details">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="issuebook_givenBookID" alignment="CENTER" layoutX="204.0" layoutY="10.0" onAction="#issuedbook_searchIssuedBookID" prefHeight="25.0" prefWidth="211.0" promptText="Search issued book by Book ID" styleClass="bluefields" />
+                                    <TextField fx:id="isssuedBook_givenStudentID" alignment="CENTER" layoutX="524.0" layoutY="10.0" onAction="#issuedbook_searchIssuedStudentID" onMouseClicked="#filterIssuedBookTable" prefHeight="27.0" prefWidth="305.0" promptText="Search issued book by Student ID or name" styleClass="fields" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Configure Lost Books">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="7.0" layoutY="8.0" prefHeight="601.0" prefWidth="1260.0" style="-fx-background-color: floralwhite;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register/Update/Search and delete Lost Books" />
+                                    <TextField fx:id="lostbook_searchBookID" alignment="CENTER" layoutX="51.0" layoutY="37.0" onAction="#lostbook_searchOperation" prefHeight="25.0" prefWidth="193.0" promptText="Enter lost book ID to search" styleClass="bluefields" />
+                                    <Separator layoutX="14.0" layoutY="76.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <GridPane layoutX="14.0" layoutY="80.0" prefHeight="414.0" prefWidth="344.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="159.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="185.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lost book ID" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lost book title" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lost book class" GridPane.rowIndex="2" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lost book subject" GridPane.rowIndex="3" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Responsible student ID" GridPane.rowIndex="4" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Responsible student name" GridPane.rowIndex="5" />
+                                          <TextField fx:id="lostbook_bookID" styleClass="bluefields" GridPane.columnIndex="1">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <TextField fx:id="lostbook_bookTitle" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <TextField fx:id="lostbook_bookClass" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <TextField fx:id="lostbook_studentID" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <TextField fx:id="lostbook_studentName" styleClass="bluefields" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding></TextField>
+                                          <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <ComboBox fx:id="lostbook_comboBookSubject" prefHeight="30.0" prefWidth="168.0" promptText="Choose subject">
+                                                   <effect>
+                                                      <InnerShadow choke="0.38" color="BLUE" height="41.76" radius="18.8975" width="35.83" />
+                                                   </effect>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </ComboBox>
+                                                <Button mnemonicParsing="false" onAction="#refresh_lostBookCombo">
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/syn.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Text fx:id="lostbook_regDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Book's registered lost date" visible="false" GridPane.rowIndex="7" />
+                                          <Text fx:id="lostbook_regDate" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Responsible student class" GridPane.rowIndex="6" />
+                                          <HBox alignment="CENTER" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <children>
+                                                <ComboBox fx:id="lostBook_combonoClassList" prefWidth="150.0" promptText="Choose class">
+                                                   <effect>
+                                                      <InnerShadow choke="0.48" color="#0ec940" height="37.31" radius="14.0775" />
+                                                   </effect>
+                                                </ComboBox>
+                                                <Button mnemonicParsing="false" onAction="#refresh_lostBookClassList">
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/syn.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER" layoutX="1.0" layoutY="497.0" prefHeight="29.0" prefWidth="370.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#lostbook_Register" styleClass="buttons2" text="Register book" />
+                                          <Button mnemonicParsing="false" onAction="#lostbook_Update" styleClass="buttons2" text="Update book">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#lostbook_Delete" styleClass="buttons2" text="Delete book">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#lostbook_clearLostBookFields" styleClass="buttons2" text="Clear">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="table_lostBook" layoutX="6.0" layoutY="20.0" onKeyReleased="#table_lostBookKeyReleased" onMouseClicked="#table_lostBookMouseClicked" prefHeight="599.0" prefWidth="880.0" styleClass="booksBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <columns>
+                                        <TableColumn fx:id="lostbook_columnBookID" prefWidth="75.0" text="Book ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                        <TableColumn fx:id="lostbook_columnBookClass" prefWidth="92.0" text="Book Class" />
+                                          <TableColumn fx:id="lostbook_columnBookTitle" prefWidth="131.0" text="Book Title">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="lostbook_columnBookSubject" prefWidth="113.0" text="Book Subject">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/book.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="lostbook_columnStudentID" prefWidth="106.0" text="Student ID">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pin_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="lostbook_columnStudentName" prefWidth="227.0" text="Student Name">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/student.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                          <TableColumn fx:id="lostbook_columnDateLost" prefWidth="135.0" text="Date Lost">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/calender.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></TableColumn>
+                                      </columns>
+                                    </TableView>
+                                    <Text fill="#03ae42" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lost book table details">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Text>
+                                    <TextField fx:id="lostbook_searchStudentID" alignment="CENTER" layoutX="366.0" layoutY="10.0" onAction="#lostbook_searchStudentOperation" onMouseClicked="#filterLostBookTableOnSearch" prefHeight="25.0" prefWidth="285.0" promptText="Enter student ID or name to search" styleClass="bluefields" />
+                                    <Button layoutX="674.0" layoutY="8.0" mnemonicParsing="false" onAction="#deleteSpecificStudentWithBook" styleClass="buttons2" text="Delete student with this book" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Lost book management">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.33783783783783783" prefHeight="601.0" prefWidth="1260.0" style="-fx-background-color: floralwhite;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="10.0" layoutY="22.94921875" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate a note for the replacement of lost book by student">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="bookM_responsibleStudentID" alignment="CENTER" layoutX="10.0" layoutY="36.0" onAction="#bookM_loadStudentAndBookInfo" prefHeight="25.0" prefWidth="391.0" promptText="Enter student ID who lost book" styleClass="fields" />
+                                    <Separator layoutX="10.0" layoutY="68.0" prefWidth="200.0" />
+                                    <TextArea fx:id="infoTextArea" editable="false" layoutX="10.0" layoutY="71.0" prefHeight="431.0" prefWidth="402.0" />
+                                    <Button layoutX="10.0" layoutY="512.0" mnemonicParsing="false" onAction="#printStudentNote" prefHeight="29.0" prefWidth="401.0" styleClass="buttons2" text="Print Student's Note" />
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox layoutX="435.0" layoutY="3.0" prefHeight="599.0" prefWidth="847.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox prefHeight="599.0" prefWidth="438.0" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Send email to the student's parent notifying them of the book loss">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Text>
+                                                <HBox prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Parent's Email:">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="parentEmailDisplay" fill="#0622f5" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                         <HBox.margin>
+                                                            <Insets left="30.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#sendEmailToParentOperation" styleClass="buttons1" text="Send Email To Parent" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="emaillingStatus" alignment="CENTER" prefWidth="200.0" visible="false">
+                                                   <children>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/inbox.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Text fill="#063cff" strokeType="OUTSIDE" strokeWidth="0.0" text="Sending email to parent...">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="596.0" prefWidth="412.0" style="-fx-background-color: lightgrey;" stylesheets="@../bookManagement.css">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="General terms and conditions for a book.">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Text>
+                                                <Separator prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </Separator>
+                                                <GridPane prefHeight="158.0" prefWidth="392.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter fine per day of the lost book (KSH)" />
+                                                      <TextField fx:id="dailyFine" promptText="only whole numbers and no signs e.g 10, 20, 40" styleClass="bluefields" GridPane.rowIndex="1">
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="20.0" top="5.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter short general term s for lost book" GridPane.rowIndex="2" />
+                                                      <TextArea fx:id="replacementTerms" prefHeight="65.0" prefWidth="392.0" promptText="e.g Replace the total fine incurred with additional books of the same type as lost one." style="-fx-border-color: blue;" wrapText="true" GridPane.rowIndex="3" />
+                                                   </children>
+                                                </GridPane>
+                                                <Text fx:id="displayTermID" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                                <Button mnemonicParsing="false" onAction="#loadBookManagementOperation" styleClass="buttons2" text="Load details to view">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#updateBookManagementDetails" styleClass="buttons1" text="Save Changes" />
+                                                      <Button layoutX="157.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearBookManagementFields" styleClass="buttons1" text="Clear fields">
+                                                         <HBox.margin>
+                                                            <Insets left="40.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Separator prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Separator>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+   <padding>
+      <Insets left="10.0" right="10.0" />
+   </padding>
+</AnchorPane>

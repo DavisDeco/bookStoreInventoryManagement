@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="257.0" prefWidth="387.0" style="-fx-background-color: wheat;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_bookmanagement.Controllers.DeleteBooksController">
+    <stylesheets>
+        <URL value="@/daviscahtech_bookmanagement/bookManagement.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../bookManagement.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Registered Text books in a specific class or level">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="315.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <children>
+                  <ComboBox fx:id="bookClassesComboBox" promptText="Choose class/ level of books">
+                     <effect>
+                        <InnerShadow choke="0.69" color="BLUE" height="15.06" width="26.94" />
+                     </effect>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#refreshBookClassesOperation">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/syn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="68.0" prefHeight="28.0" prefWidth="315.0">
+               <children>
+                  <ComboBox fx:id="bookSubjectComboBox" prefHeight="25.0" prefWidth="194.0" promptText="Choose books' subject">
+                     <effect>
+                        <InnerShadow choke="0.69" color="BLUE" height="15.06" width="26.94" />
+                     </effect>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#refreshBookSubjectOperation">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/syn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#deleteBooksOperation" prefHeight="25.0" prefWidth="242.0" styleClass="buttons2" text="Delete all book in this class/level" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
